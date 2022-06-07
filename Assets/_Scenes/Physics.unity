@@ -132,13 +132,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213477693}
+  - component: {fileID: 213477694}
   - component: {fileID: 213477692}
   - component: {fileID: 213477691}
   - component: {fileID: 213477690}
   - component: {fileID: 213477689}
   - component: {fileID: 213477688}
   m_Layer: 0
-  m_Name: LFlipper
+  m_Name: RFlipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,14 +203,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213477687}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &213477691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -235,7 +236,7 @@ HingeJoint:
   m_Anchor: {x: 0.5, y: 0.01, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.085, y: 0.92019874, z: -0.44132265}
+  m_ConnectedAnchor: {x: 0.1183126, y: 0.92019874, z: -0.4750196}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -246,10 +247,10 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
     min: 0
-    max: 0
+    max: 45
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -266,13 +267,30 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213477687}
-  m_LocalRotation: {x: -0.056692794, y: 0, z: 0, w: 0.99839175}
-  m_LocalPosition: {x: 0.05, y: 0.92, z: -0.4413}
-  m_LocalScale: {x: 0.07, y: 0.02, z: 0.02}
+  m_LocalRotation: {x: -0.054761034, y: -0.25840276, z: -0.0146731725, w: 0.96437234}
+  m_LocalPosition: {x: 0.075, y: 0.92, z: -0.5}
+  m_LocalScale: {x: 0.1, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: -6.5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.5, y: -30, z: 0}
+--- !u!114 &213477694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213477687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9c92942ec215a4fa3401e98f3db1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restPos: 0
+  activePos: 45
+  hitStrenght: 10000
+  damper: 100
+  inputName: RFlipper
 --- !u!1 &472305178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,13 +1974,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1331072286}
+  - component: {fileID: 1331072287}
   - component: {fileID: 1331072285}
   - component: {fileID: 1331072284}
   - component: {fileID: 1331072283}
   - component: {fileID: 1331072282}
   - component: {fileID: 1331072281}
   m_Layer: 0
-  m_Name: RFlipper
+  m_Name: LFlipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,14 +2045,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331072280}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &1331072284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2059,7 +2078,7 @@ HingeJoint:
   m_Anchor: {x: -0.5, y: 0.01, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.085, y: 0.92019874, z: -0.44132265}
+  m_ConnectedAnchor: {x: -0.1183126, y: 0.92019874, z: -0.4750196}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2070,9 +2089,9 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
-    min: 0
+    min: -45
     max: 0
     bounciness: 0
     bounceMinVelocity: 0.2
@@ -2090,13 +2109,30 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331072280}
-  m_LocalRotation: {x: -0.056692794, y: 0, z: 0, w: 0.99839175}
-  m_LocalPosition: {x: -0.05, y: 0.92, z: -0.4413}
-  m_LocalScale: {x: 0.07, y: 0.02, z: 0.02}
+  m_LocalRotation: {x: -0.05476103, y: 0.25840282, z: 0.014673176, w: 0.9643723}
+  m_LocalPosition: {x: -0.075, y: 0.92, z: -0.5}
+  m_LocalScale: {x: 0.1, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: -6.5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.5, y: 30, z: 0}
+--- !u!114 &1331072287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331072280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9c92942ec215a4fa3401e98f3db1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restPos: 0
+  activePos: -45
+  hitStrenght: 10000
+  damper: 100
+  inputName: LFlipper
 --- !u!1 &1331558725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,7 +2369,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522001534}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0e7d120f9973452419513b9e856b7484, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2706,7 +2742,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803134604}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0e7d120f9973452419513b9e856b7484, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
