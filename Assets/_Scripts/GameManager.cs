@@ -5,9 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
-    [SerializeField] private Animator _rightTrigger;
-    [SerializeField] private Animator _leftTrigger;
+    Collider kek;
 
     public bool GameInSession { get => _gameInSession; set => _gameInSession = value; }
 
@@ -23,19 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
-    }
 
-    public void RightTriggerTogggle()
-    {
-        if (_rightTrigger)
-            _rightTrigger.SetTrigger("Trigger");
-    }
-
-    public void LeftTriggerTogggle()
-    {
-        if (_leftTrigger)
-            _leftTrigger.SetTrigger("Trigger");
     }
 
 }
