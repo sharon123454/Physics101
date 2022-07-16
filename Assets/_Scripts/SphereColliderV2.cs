@@ -1,16 +1,16 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxColliderV2 : ColliderV2
+public class SphereColliderV2 : ColliderV2
 {
-    //default box settings v
+    //default sphere settings v
     public Vector3 Center = Vector3.zero;
-    public Vector3 Size = Vector3.one;
+    public float Radius = 0.5f;
 
-    //box collider inner variables
+    //sphere collider inner variable
     private Vector3 colliderCenter;
-    private Vector3 colliderSize;
+    private float radius;
 
     private void Awake()
     {
@@ -55,19 +55,25 @@ public class BoxColliderV2 : ColliderV2
 
     private void SetSize()
     {
-        //if collider size not default
-        if (Size != Vector3.one)
-        {
-            //set collider size data by variables given
-            colliderSize.x = transform.localScale.x * Size.x;
-            colliderSize.y = transform.localScale.y * Size.y;
-            colliderSize.z = transform.localScale.z * Size.z;
-        }
-        //if collider size default, use objects' scale
-        else
-        {
-            colliderSize = transform.localScale;
-        }
+        #region doesn't work fully, scrapped. ignore.
+        //float largestScale = Radius;
+
+        //if (transform.localScale.x > transform.localScale.y)
+        //    largestScale = transform.localScale.x;
+        //if (transform.localScale.x > transform.localScale.z)
+        //    largestScale = transform.localScale.x;
+        //if (transform.localScale.y > transform.localScale.x)
+        //    largestScale = transform.localScale.y;
+        //if (transform.localScale.y > transform.localScale.z)
+        //    largestScale = transform.localScale.y;
+        //if (transform.localScale.z > transform.localScale.x)
+        //    largestScale = transform.localScale.z;
+        //if (transform.localScale.z > transform.localScale.y)
+        //    largestScale = transform.localScale.z;
+        //radius = Radius;
+        #endregion
+
+        radius = Radius;
     }
 
     private void OnDrawGizmosSelected()
@@ -80,7 +86,7 @@ public class BoxColliderV2 : ColliderV2
             SetSize();
             //draw collider
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(colliderCenter, colliderSize);
+            Gizmos.DrawWireSphere(colliderCenter, radius);
         }
     }
 }
