@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class Flippers : MonoBehaviour
+public class Bumpers : MonoBehaviour
 {
     [SerializeField] float restPos = 0f, activePos = 45f, hitStrenght = 10000f, damper = 100f;
     [SerializeField] string inputName;
